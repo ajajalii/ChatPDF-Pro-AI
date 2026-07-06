@@ -1,7 +1,8 @@
 import { useEffect, useCallback, useState } from 'react';
-import { BookOpen, Moon, Sun } from 'lucide-react';
+import { Moon, Sun } from 'lucide-react';
 import logo from './assets/final_logo.png';
 import FileUpload from './components/FileUpload';
+import FolderInteraction from './components/FolderInteraction';
 import PdfViewer from './components/PdfViewer';
 import SummaryPanel from './components/SummaryPanel';
 import ChatBox from './components/ChatBox';
@@ -233,15 +234,7 @@ export default function App() {
               />
             ) : (
               <div className="flex flex-col items-center justify-center h-full gap-4 text-center p-8">
-                <div
-                  className={`w-20 h-20 rounded-3xl border flex items-center justify-center transition-colors duration-300 ${
-                    isDark
-                      ? 'bg-zinc-900 border-zinc-800 shadow-[0_12px_40px_rgba(0,0,0,0.45)]'
-                      : 'bg-white border-stone-200 shadow-[0_12px_40px_rgba(24,24,27,0.08)]'
-                  }`}
-                >
-                  <BookOpen size={36} className={isDark ? 'text-zinc-100' : 'text-stone-900'} />
-                </div>
+                <FolderInteraction />
                 <div>
                   <p
                     className={`font-display text-xl font-medium ${
